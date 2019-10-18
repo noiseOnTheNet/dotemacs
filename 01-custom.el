@@ -25,7 +25,7 @@
  '(org-refile-use-outline-path nil)
  '(package-selected-packages
    (quote
-    (markdown-mode tide company typescript-mode company-mode nim-mode rust-mode elm-mode org-pomodoro magit ivy-hydra hydra ivy evil use-package)))
+    (ox-gfm ox-gmd markdown-mode tide company typescript-mode company-mode nim-mode rust-mode elm-mode org-pomodoro magit ivy-hydra hydra ivy evil use-package)))
  '(safe-local-variable-values
    (quote
     ((conda-project-env-name . "django2-python36-arda"))))
