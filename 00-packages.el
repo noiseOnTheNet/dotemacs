@@ -49,6 +49,11 @@
   :init (setq markdown-command "multimarkdown"))
 (use-package ox-gfm
   :ensure t)
+(use-package yaml-mode
+  :ensure t)
+(use-package yaml-imenu
+  :after (yaml-mode)
+  :ensure t)
 (use-package yafolding
   :ensure t)
 (use-package window-numbering
