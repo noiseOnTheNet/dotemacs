@@ -40,3 +40,6 @@
           (lambda ()
             (define-key org-agenda-mode-map "P"
               'org-pomodoro)))
+(setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+(setq org-refile-allow-creating-parent-nodes 'confirm)
+(setq org-outline-path-complete-in-steps nil)
