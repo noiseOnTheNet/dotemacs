@@ -59,3 +59,5 @@
 (use-package window-numbering
   :init (window-numbering-mode)
   :ensure t)
+(use-package ox-rst
+  :ensure t)
