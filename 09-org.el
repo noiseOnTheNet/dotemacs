@@ -43,3 +43,15 @@
 (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 (setq org-refile-allow-creating-parent-nodes 'confirm)
 (setq org-outline-path-complete-in-steps nil)
+(setq org-capture-templates
+      '(("a" "Add Appointment" entry
+	 (file "~/org/notes.org")
+	 "* %^{short description} %^g
+%^T%^{LOCATION}p%^{PEOPLE}p
+%?%i%a
+added %U")
+	("t" "Add TODO" entry
+	 (file "~/org/notes.org")
+	 "* TODO %?
+%U
+%a")))
