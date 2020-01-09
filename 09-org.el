@@ -23,16 +23,16 @@
 (setq org-latex-pdf-process
       '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
-(setq org-babel-load-languages
- '((R . t)
-   (python . t)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)
    (emacs-lisp . t)
    (ditaa . t)
    (dot . t)
    (sql . t)
    (sqlite . t)
    (plantuml . t)
-   (ipython . t)
+   ;(ipython . t)
    ))
 ;; this binds P to org-pomodoro
 ;; default binding of P is equivalent to p (previous item)
@@ -55,3 +55,9 @@ added %U")
 	 "* TODO %?
 %U
 %a")))
+(setq org-agenda-files
+      (list
+       "~/Documents/workspace/org-personal/2020/personale_2019_2020.org"
+       "~/Documents/workspace/Group/2020/Lavoro_2020.org"
+       ;;"~/Documents/workspace/Group/2019/personale_2018_2019.org"
+       ))
