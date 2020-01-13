@@ -66,6 +66,8 @@
 (use-package lsp-mode
   :ensure t
   :hook ((python-mode . lsp))
+  :bind (("<f2>" . lsp-find-definition)
+	 ("<f3>" . lsp-find-references))
   :commands lsp)
 (use-package lsp-ui
   :ensure t
@@ -76,3 +78,6 @@
 (use-package lsp-treemacs
   :ensure t
   :commands lsp-treemacs-errors-list)
+(use-package lsp-ivy
+  :ensure t
+  :commands lsp-ivy)
