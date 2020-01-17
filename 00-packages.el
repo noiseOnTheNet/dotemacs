@@ -65,7 +65,8 @@
   :ensure t)
 (use-package lsp-mode
   :ensure t
-  :hook ((python-mode . lsp))
+  :hook ((python-mode . lsp)
+	 (rust-mode . lsp))
   :bind (("<f2>" . lsp-find-definition)
 	 ("<f3>" . lsp-find-references))
   :commands lsp)
@@ -81,3 +82,6 @@
 (use-package lsp-ivy
   :ensure t
   :commands lsp-ivy)
+(use-package htmlize
+  :ensure t)
+  
