@@ -67,7 +67,9 @@
   :ensure t
   :hook ((python-mode . lsp))
   :bind (("<f2>" . lsp-find-definition)
-	 ("<f3>" . lsp-find-references))
+	 ("<f3>" . lsp-find-references)
+	 ("<f4>" . flymake-goto-next-error)
+	 ("<f5>" . flymake-goto-prev-error))
   :commands lsp)
 (use-package lsp-ui
   :ensure t
