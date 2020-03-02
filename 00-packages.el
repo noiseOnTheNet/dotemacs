@@ -1,71 +1,55 @@
-
+(setq use-package-always-defer t
+      use-package-always-ensure t
+      backup-directory-alist `((".*" . ,temporary-file-directory))
+      auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (use-package evil
-  :init (evil-mode)
-  :ensure t)
+  :init (evil-mode))
 (use-package ivy
-  :init (ivy-mode)
-  :ensure t)
-(use-package hydra
-  :ensure t)
+  :init (ivy-mode))
+(use-package hydra)
 (use-package ivy-hydra
-  :after (ivy hydra)
-  :ensure t)
-(use-package magit
-  :ensure t)
+  :after (ivy hydra))
+(use-package magit)
 (use-package org-pomodoro
-  :ensure t)
-(use-package elm-mode
-  :ensure t)
-(use-package rust-mode
-  :ensure t)
-(use-package company
-  :ensure t)
-(use-package typescript-mode
-  :ensure t)
-(use-package nim-mode
-  :ensure t)
+  :init (setq org-pomodoro-long-break-length 5))
+(use-package elm-mode)
+(use-package rust-mode)
+(use-package company)
+(use-package typescript-mode)
+(use-package nim-mode)
+(use-package scala-mode
+  :mode "\\.s\\(cala\\|bt\\)$")
 (use-package js2-mode
-  :ensure t
   :init
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 (use-package tide
-  :ensure t
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
          (before-save . tide-formater-before-save)))
 (use-package web-mode
-  :ensure t
   :init
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
   (setq web-mode-enable-current-element-highlight t))
 (use-package markdown-mode
-  :ensure t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
-(use-package ox-gfm
-  :ensure t)
-(use-package yaml-mode
-  :ensure t)
+(use-package ox-gfm)
+(use-package yaml-mode)
 (use-package yaml-imenu
-  :after (yaml-mode)
-  :ensure t)
-(use-package yafolding
-  :ensure t)
+  :after (yaml-mode))
+(use-package yafolding)
 (use-package window-numbering
-  :init (window-numbering-mode)
-  :ensure t)
-(use-package ox-rst
-  :ensure t)
-(use-package multi-term
-  :ensure t)
+  :init (window-numbering-mode))
+(use-package ox-rst)
+(use-package multi-term)
 (use-package lsp-mode
-  :ensure t
-  :hook ((python-mode . lsp)
+  :hook ((scala-mode . lsp)
+	 (python-mode . lsp)
 	 (rust-mode . lsp))
   :bind (("<f2>" . lsp-find-definition)
 	 ("<f3>" . lsp-find-references)
@@ -73,17 +57,12 @@
 	 ("<f5>" . flymake-goto-prev-error))
   :commands lsp)
 (use-package lsp-ui
-  :ensure t
   :commands lsp-ui-mode)
 (use-package company-lsp
-  :ensure t
   :commands company-lsp)
 (use-package lsp-treemacs
-  :ensure t
   :commands lsp-treemacs-errors-list)
 (use-package lsp-ivy
-  :ensure t
   :commands lsp-ivy)
-(use-package htmlize
-  :ensure t)
+(use-package htmlize)
   
