@@ -1,3 +1,4 @@
+(require 'use-package-ensure)
 (setq use-package-always-defer t
       use-package-always-ensure t
       backup-directory-alist `((".*" . ,temporary-file-directory))
