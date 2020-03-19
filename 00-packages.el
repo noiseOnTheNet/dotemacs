@@ -1,3 +1,4 @@
+(require 'use-package-ensure)
 (setq use-package-always-defer t
       use-package-always-ensure t
       backup-directory-alist `((".*" . ,temporary-file-directory))
@@ -13,6 +14,7 @@
 (use-package org-pomodoro
   :init (setq org-pomodoro-long-break-length 5))
 (use-package elm-mode)
+(use-package yasnippet)
 (use-package rust-mode)
 (use-package company)
 (use-package typescript-mode)
@@ -65,4 +67,6 @@
 (use-package lsp-ivy
   :commands lsp-ivy)
 (use-package htmlize)
-  
+;;this is for using maven  
+(add-hook 'compilation-filter-hook
+  (lambda () (ansi-color-apply-on-region (point-min) (point-max))))
