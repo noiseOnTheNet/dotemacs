@@ -67,7 +67,7 @@
 (use-package lsp-ivy
   :commands lsp-ivy)
 (use-package htmlize)
-(use-package simple-http
+(use-package simple-httpd
   :init (setq httpd-port 9999)) 
 ;;this is for using maven  
 (add-hook 'compilation-filter-hook
