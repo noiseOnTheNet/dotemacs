@@ -65,4 +65,5 @@
 (use-package lsp-ivy
   :commands lsp-ivy)
 (use-package htmlize)
-  
+(use-package simple-http
+  :init (setq httpd-port 9999)) 
