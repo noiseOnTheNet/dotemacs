@@ -67,6 +67,8 @@
 (use-package lsp-ivy
   :commands lsp-ivy)
 (use-package htmlize)
+(use-package simple-http
+  :init (setq httpd-port 9999)) 
 ;;this is for using maven  
 (add-hook 'compilation-filter-hook
   (lambda () (ansi-color-apply-on-region (point-min) (point-max))))
