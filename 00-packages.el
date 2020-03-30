@@ -4,7 +4,9 @@
       backup-directory-alist `((".*" . ,temporary-file-directory))
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (use-package evil
-  :init (evil-mode))
+  :init (setq evil-want-C-i-jump nil)
+  (evil-mode))
+(use-package org)
 (use-package ivy
   :init (ivy-mode))
 (use-package hydra)
@@ -69,6 +71,26 @@
 (use-package htmlize)
 (use-package simple-httpd
   :init (setq httpd-port 9999)) 
+(use-package conda
+  :ensure t
+  :init
+  (let ((mv-conda-path
+	 (if (equal (system-name) "bolhdppclient02")
+	     "/opt/miniconda"
+	   "~/miniconda3")))
+    (setq conda-anaconda-home (expand-file-name mv-conda-path))
+    (setq conda-env-home-directory (expand-file-name mv-conda-path))))
 ;;this is for using maven  
 (add-hook 'compilation-filter-hook
   (lambda () (ansi-color-apply-on-region (point-min) (point-max))))
+
+(use-package evil-org
+  :ensure t
+  :after org
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme)))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
