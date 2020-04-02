@@ -11,3 +11,4 @@
 (show-paren-mode 1)
 (setq-default indent-tabs-mode nil)
 (fset 'yes-or-no-p 'y-or-n-p)
+(set-frame-font "Source Code Pro" nil t)
