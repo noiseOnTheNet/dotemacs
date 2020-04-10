@@ -57,7 +57,7 @@ added %U")
 %a")))
 (setq org-agenda-files
       (list
-       "~/Documents/workspace/org-personal/2020/personale_2019_2020.org"
-       "~/Documents/workspace/Group/2020/Lavoro_2020.org"
-       ;;"~/Documents/workspace/Group/2019/personale_2018_2019.org"
+       "~/workspace/org-personal/2020/personale_2019_2020.org"
        ))
+;;; set timestamp locale
+(setq system-time-locale "C")
