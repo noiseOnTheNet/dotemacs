@@ -12,3 +12,4 @@
 (setq-default indent-tabs-mode nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 (set-frame-font "Source Code Pro" nil t)
+(global-hl-line-mode +1)
