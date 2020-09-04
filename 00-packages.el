@@ -7,7 +7,8 @@
   :init (setq evil-want-C-i-jump nil)
   (evil-mode))
 (use-package evil-leader
-  :init (evil-leader/set-leader "<SPC>")
+  :init (global-evil-leader-mode)
+  (evil-leader/set-leader "<SPC>")
   (evil-leader/set-key
     "0" 'delete-window
     "1" 'delete-other-windows
