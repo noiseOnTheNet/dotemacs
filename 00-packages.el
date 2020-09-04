@@ -14,6 +14,7 @@
     "1" 'delete-other-windows
     "2" 'split-window-horizontally
     "3" 'split-window-vertically
+    "m" 'magit-status
     "o" 'other-window
     "e" 'find-file
     "b" 'switch-to-buffer
