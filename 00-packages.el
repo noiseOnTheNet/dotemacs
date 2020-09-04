@@ -6,7 +6,19 @@
 (use-package evil
   :init (setq evil-want-C-i-jump nil)
   (evil-mode))
+(use-package evil-leader
+  :init (evil-leader/set-leader "<SPC>")
+  (evil-leader/set-key
+    "0" 'delete-window
+    "1" 'delete-other-windows
+    "2" 'split-window-horizontally
+    "3" 'split-window-vertically
+    "o" 'other-window
+    "e" 'find-file
+    "b" 'switch-to-buffer
+    "k" 'kill-buffer))
 (use-package org)
+(use-package counsel)
 (use-package ivy
   :init (ivy-mode))
 (use-package hydra)
@@ -94,3 +106,4 @@
               (evil-org-set-key-theme)))
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
+(use-package discover)
