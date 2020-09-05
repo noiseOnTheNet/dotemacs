@@ -1,7 +1,20 @@
-(require 'use-package-ensure)
-(setq use-package-always-defer t
-      use-package-always-ensure t
-      backup-directory-alist `((".*" . ,temporary-file-directory))
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp))
+    (load bootstrap-file nil 'nomessage)))
+
+;;(require 'use-package-ensure)
+;; (setq use-package-always-defer t
+;;       use-package-always-ensure t)
+(setq backup-directory-alist `((".*" . ,temporary-file-directory))
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (use-package evil
   :init (setq evil-want-C-i-jump nil)
@@ -86,7 +99,6 @@
 (use-package simple-httpd
   :init (setq httpd-port 9999)) 
 (use-package conda
-  :ensure t
   :init
   (let ((mv-conda-path
 	 (if (equal (system-name) "bolhdppclient02")
@@ -99,7 +111,6 @@
   (lambda () (ansi-color-apply-on-region (point-min) (point-max))))
 
 (use-package evil-org
-  :ensure t
   :after org
   :config
   (add-hook 'org-mode-hook 'evil-org-mode)
