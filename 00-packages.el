@@ -8,8 +8,11 @@
          "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
          'silent 'inhibit-cookies)
       (goto-char (point-max))
-      (eval-print-last-sexp))
-    (load bootstrap-file nil 'nomessage)))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+(straight-use-package 'use-package)
+;; (straight-use-package 'evil-leader)
+;; (straight-use-package 'counsel)
 
 ;;(require 'use-package-ensure)
 ;; (setq use-package-always-defer t
@@ -20,7 +23,9 @@
   :init (setq evil-want-C-i-jump nil)
   (evil-mode))
 (use-package evil-leader
-  :init (global-evil-leader-mode)
+  :straight t
+  :init
+  (global-evil-leader-mode)
   (evil-leader/set-leader "<SPC>")
   (evil-leader/set-key
     "0" 'delete-window
@@ -33,7 +38,8 @@
     "b" 'switch-to-buffer
     "k" 'kill-buffer))
 (use-package org)
-(use-package counsel)
+(use-package counsel
+  :straight t)
 (use-package ivy
   :init (ivy-mode))
 (use-package hydra)
@@ -119,4 +125,4 @@
               (evil-org-set-key-theme)))
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
-(use-package discover)
+;;(use-package discover)
