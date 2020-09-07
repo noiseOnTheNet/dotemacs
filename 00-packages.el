@@ -20,6 +20,7 @@
 (setq backup-directory-alist `((".*" . ,temporary-file-directory))
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (use-package evil
+  :straight t
   :init (setq evil-want-C-i-jump nil)
   (evil-mode))
 (use-package evil-leader
@@ -41,50 +42,84 @@
 (use-package counsel
   :straight t)
 (use-package ivy
+  :straight t
   :init (ivy-mode))
-(use-package hydra)
+(use-package hydra
+  :straight t
+  )
 (use-package ivy-hydra
+  :straight t
   :after (ivy hydra))
-(use-package magit)
+(use-package magit
+  :straight t
+  )
 (use-package org-pomodoro
+  :straight t
   :init (setq org-pomodoro-long-break-length 5))
-(use-package elm-mode)
-(use-package yasnippet)
-(use-package rust-mode)
-(use-package company)
-(use-package typescript-mode)
-(use-package nim-mode)
+(use-package elm-mode
+  :straight t
+  )
+(use-package yasnippet
+  :straight t
+  )
+(use-package rust-mode
+  :straight t
+  )
+(use-package company
+  :straight t
+  )
+(use-package typescript-mode
+  :straight t
+  )
 (use-package scala-mode
+  :straight t
   :mode "\\.s\\(cala\\|bt\\)$")
 (use-package js2-mode
+  :straight t
   :init
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 (use-package tide
+  :straight t
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
          (before-save . tide-formater-before-save)))
 (use-package web-mode
+  :straight t
   :init
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
   (setq web-mode-enable-current-element-highlight t))
 (use-package markdown-mode
+  :straight t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
-(use-package ox-gfm)
-(use-package yaml-mode)
+(use-package ox-gfm
+  :straight t
+  )
+(use-package yaml-mode
+  :straight t
+  )
 (use-package yaml-imenu
+  :straight t
   :after (yaml-mode))
-(use-package yafolding)
+(use-package yafolding
+  :straight t
+  )
 (use-package window-numbering
+  :straight t
   :init (window-numbering-mode))
-(use-package ox-rst)
-(use-package multi-term)
+(use-package ox-rst
+  :straight t
+  )
+(use-package multi-term
+  :straight t
+  )
 (use-package lsp-mode
+  :straight t
   :hook ((scala-mode . lsp)
 	 (python-mode . lsp)
 	 (rust-mode . lsp))
@@ -94,17 +129,25 @@
 	 ("<f5>" . flymake-goto-prev-error))
   :commands lsp)
 (use-package lsp-ui
+  :straight t
   :commands lsp-ui-mode)
 (use-package company-lsp
+  :straight t
   :commands company-lsp)
 (use-package lsp-treemacs
+  :straight t
   :commands lsp-treemacs-errors-list)
 (use-package lsp-ivy
+  :straight t
   :commands lsp-ivy)
-(use-package htmlize)
+(use-package htmlize
+  :straight t
+  )
 (use-package simple-httpd
+  :straight t
   :init (setq httpd-port 9999)) 
 (use-package conda
+  :straight t
   :init
   (let ((mv-conda-path
 	 (if (equal (system-name) "bolhdppclient02")
@@ -117,6 +160,7 @@
   (lambda () (ansi-color-apply-on-region (point-min) (point-max))))
 
 (use-package evil-org
+  :straight t
   :after org
   :config
   (add-hook 'org-mode-hook 'evil-org-mode)
