@@ -17,6 +17,13 @@
 ;;(require 'use-package-ensure)
 ;; (setq use-package-always-defer t
 ;;       use-package-always-ensure t)
+(use-package org-plus-contrib
+  ;; :straight t
+  )
+(use-package org
+   ;; :straight t
+  )
+
 (setq backup-directory-alist `((".*" . ,temporary-file-directory))
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (use-package evil
@@ -34,11 +41,14 @@
     "2" 'split-window-horizontally
     "3" 'split-window-vertically
     "m" 'magit-status
+    "s" 'org-save-all-org-buffers
+    "p" 'org-pomodoro
+    "d" 'org-table-copy-down
+    "c" 'org-clone-subtree-with-time-shift
     "o" 'other-window
     "e" 'find-file
     "b" 'switch-to-buffer
     "k" 'kill-buffer))
-(use-package org)
 (use-package counsel
   :straight t)
 (use-package ivy
@@ -54,7 +64,7 @@
   :straight t
   )
 (use-package org-pomodoro
-  :straight t
+  ;;:straight t
   :init (setq org-pomodoro-long-break-length 5))
 (use-package elm-mode
   :straight t
@@ -98,7 +108,7 @@
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 (use-package ox-gfm
-  :straight t
+;;  :straight t
   )
 (use-package yaml-mode
   :straight t
@@ -113,7 +123,7 @@
   :straight t
   :init (window-numbering-mode))
 (use-package ox-rst
-  :straight t
+;;  :straight t
   )
 (use-package multi-term
   :straight t
