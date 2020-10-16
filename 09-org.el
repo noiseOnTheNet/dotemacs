@@ -16,12 +16,13 @@
       '(("frame" "lines")
 	("fontsize" "\\scriptsize")
 	("linenos" "")))
+(setq org-latex-listings 'minted)
 (setq org-latex-pdf-process
-      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-	"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-	"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-(setq org-latex-pdf-process
-      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+      '("pdflatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
+	"pdflatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"
+	"pdflatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
+;; (setq org-latex-pdf-process
+;;       '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 (org-babel-do-load-languages
  'org-babel-load-languages
