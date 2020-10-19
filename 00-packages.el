@@ -46,6 +46,8 @@
     "d" 'org-table-copy-down
     "c" 'org-clone-subtree-with-time-shift
     "o" 'other-window
+    "c" 'compile
+    "r" 'recompile
     "e" 'find-file
     "f" 'swiper
     "b" 'switch-to-buffer
