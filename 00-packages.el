@@ -47,6 +47,7 @@
     "c" 'org-clone-subtree-with-time-shift
     "o" 'other-window
     "e" 'find-file
+    "f" 'swiper
     "b" 'switch-to-buffer
     "k" 'kill-buffer))
 (use-package counsel
