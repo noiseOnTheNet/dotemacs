@@ -181,3 +181,7 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 ;;(use-package discover)
+(add-hook 'python-mode-hook 'display-line-numbers-mode)
+(add-hook 'elm-mode-hook 'display-line-numbers-mode)
+(add-hook 'rust-mode-hook 'display-line-numbers-mode)
+(add-hook 'org-mode-hook 'display-line-numbers-mode)
