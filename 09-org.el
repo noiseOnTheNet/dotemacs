@@ -62,3 +62,21 @@ added %U")
        ))
 ;;; set timestamp locale
 (setq system-time-locale "C")
+
+(setq mv-org-planning-path 
+      "~/workspace/TestReadDatetime/read_date_time/target/release/read_date_time")
+(setq mv-org-planning-path 
+      "c:\\Users\\mvezzoli\\workspace\\TestReadDatetime\\read_date_time\\target\\release\\read_date_time.exe")
+(defun mv-org-add-planning (start-date duration)
+  "add some org panning entries in current buffer"
+  (interactive "sDate: \nnItems count: ")
+  (let ((current-prefix-arg '(4)))
+    (insert
+     (shell-command-to-string
+      (mapconcat 'identity
+                 (list
+                  mv-org-planning-path
+                  start-date
+                  (number-to-string duration))
+                 " ")))))
+
