@@ -163,7 +163,7 @@
   :straight t
   :init
   (let ((mv-conda-path
-	 (if (equal (system-name) "bolhdppclient02")
+	 (if (equal (system-name) "bolhdppclient03")
 	     "/opt/miniconda"
 	   "~/miniconda3")))
     (setq conda-anaconda-home (expand-file-name mv-conda-path))
@@ -186,6 +186,16 @@
   :straight t
   )
 ;;(use-package discover)
+(use-package ess
+  :straight t
+  :config
+  (setq inferior-julia-program "/home/mvezzoli/bin/julia"))
+(use-package julia-mode
+  :straight t
+  )
+(use-package julia-repl
+  :straight t
+  )
 (add-hook 'python-mode-hook 'display-line-numbers-mode)
 (add-hook 'elm-mode-hook 'display-line-numbers-mode)
 (add-hook 'rust-mode-hook 'display-line-numbers-mode)
