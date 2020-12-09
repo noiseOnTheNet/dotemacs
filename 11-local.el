@@ -1,0 +1,7 @@
+(setq httpd-root "/home/mvezzoli/workspace")
+(setq httpd-host "0.0.0.0")
+(httpd-start)
+(if (equal (system-name) "bolhdppclient03")
+    (let ((local-conda-env "/anaconda_env/personal/mvezzoli/loader3_py36")) 
+      (if (file-directory-p local-conda-env)
+	  (conda-env-activate-path local-conda-env))))

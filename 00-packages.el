@@ -166,8 +166,10 @@
 	 (if (equal (system-name) "bolhdppclient03")
 	     "/opt/miniconda"
 	   "~/miniconda3")))
-    (setq conda-anaconda-home (expand-file-name mv-conda-path))
-    (setq conda-env-home-directory (expand-file-name mv-conda-path))))
+    (if (file-directory-p (expand-file-name mv-conda-path))
+	(progn
+	  (setq conda-anaconda-home (expand-file-name mv-conda-path))
+	  (setq conda-env-home-directory (expand-file-name mv-conda-path))))))
 ;;this is for using maven  
 (add-hook 'compilation-filter-hook
   (lambda () (ansi-color-apply-on-region (point-min) (point-max))))

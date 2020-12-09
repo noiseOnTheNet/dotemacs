@@ -23,6 +23,7 @@
 	"pdflatex -shell-escape -synctex=1 -interaction nonstopmode -output-directory %o %f"))
 ;; (setq org-latex-pdf-process
 ;;       '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+(load "~/workspace/dotemacs/others/ob-julia.el")
 
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -30,6 +31,7 @@
    (emacs-lisp . t)
    (ditaa . t)
    (dot . t)
+   (julia . t)
    (sql . t)
    (sqlite . t)
    (plantuml . t)
