@@ -201,6 +201,9 @@
 (use-package julia-repl
   :straight t
   )
+(use-package dockerfile-mode
+  :straight t
+  )
 (add-hook 'python-mode-hook 'display-line-numbers-mode)
 (add-hook 'elm-mode-hook 'display-line-numbers-mode)
 (add-hook 'rust-mode-hook 'display-line-numbers-mode)
