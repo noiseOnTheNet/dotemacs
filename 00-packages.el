@@ -45,6 +45,8 @@
     "p" 'org-pomodoro
     "d" 'org-table-copy-down
     "c" 'org-clone-subtree-with-time-shift
+    "t" 'org-trello-sync-card
+    "T" 'org-trello-sync-buffer
     "o" 'other-window
     "c" 'compile
     "r" 'recompile
