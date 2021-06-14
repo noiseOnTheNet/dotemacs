@@ -1,3 +1,4 @@
+(setq mv-org-files (seq-filter #'file-exists-p  '("~/workspace/org-personal/birthdays.org" "~/Documents/workspace/Group_2021/Lavoro_2021.org" "~/workspace/org-personal/2020/personale_2019_2020.org")))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -5,8 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(display-line-numbers-type 'relative)
  '(global-display-line-numbers-mode t)
- '(org-agenda-files
-   '("~/workspace/org-personal/birthdays.org" "~/Documents/workspace/Group_2021/Lavoro_2021.org" "~/workspace/org-personal/2020/personale_2019_2020.org"))
+ '(org-agenda-files mv-org-files)
  '(org-agenda-start-on-weekday nil)
  '(org-trello-current-prefix-keybinding "C-c o" nil (org-trello))
  '(package-selected-packages
