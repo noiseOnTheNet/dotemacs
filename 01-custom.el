@@ -5,7 +5,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-trello-current-prefix-keybinding "C-c o" nil (org-trello))
- '(straight-disable-native-compilation t))
+ '(straight-disable-native-compilation t)
  '(display-line-numbers-type 'relative)
  '(global-display-line-numbers-mode t)
  '(org-agenda-files mv-org-files)
