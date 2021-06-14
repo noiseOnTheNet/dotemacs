@@ -4,7 +4,6 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (org-agenda-list)
-(toggle-frame-fullscreen)
 (global-display-line-numbers-mode 0)
 (setq ring-bell-function 'ignore)
 (show-paren-mode 1)

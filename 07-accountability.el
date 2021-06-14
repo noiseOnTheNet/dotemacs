@@ -7,7 +7,7 @@ Riporto allegati i dati raccolti fino a settimana scorsa, sia per l'utilizzo dei
 ")
        (let
 	   ((date-string (format-time-string "%Y%m%d")))
-	 (dolist (chart (list "Functional" "Parametric" "WaferArrival" "DSID" "Bench"))
+	 (dolist (chart (list "Rel" "Magnum" "Functional" "Parametric" "WaferArrival" "DSID" "Bench"))
 	   (let
 	       ((attachment-string (concat "c:/TEMP/" chart "_" date-string "0930.pdf")))
 	     (mml-attach-file attachment-string)))))

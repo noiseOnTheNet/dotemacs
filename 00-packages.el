@@ -42,7 +42,7 @@
     "3" 'split-window-vertically
     "m" 'magit-status
     "s" 'org-save-all-org-buffers
-    "p" 'org-pomodoro
+    "p" 'projectile-command-map
     "d" 'org-table-copy-down
     "c" 'org-clone-subtree-with-time-shift
     "t" 'org-trello-sync-card
@@ -52,6 +52,9 @@
     "r" 'recompile
     "e" 'find-file
     "f" 'swiper
+    "P" 'smerge-previous
+    "N" 'smerge-next
+    "K" 'smerge-keep-current
     "b" 'switch-to-buffer
     "k" 'kill-buffer))
 (use-package counsel
@@ -199,6 +202,10 @@
   :straight t
   )
 (use-package julia-repl
+  :straight t
+  )
+(use-package projectile
+  :init (projectile-global-mode)
   :straight t
   )
 (add-hook 'python-mode-hook 'display-line-numbers-mode)
