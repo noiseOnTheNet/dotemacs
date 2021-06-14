@@ -1,4 +1,6 @@
 (defvar bootstrap-version)
+(setq comp-deferred-compilation-black-list '())
+(setq straight-disable-native-compilation t)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
       (bootstrap-version 5))
@@ -28,8 +30,9 @@
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (use-package evil
   :straight t
-  :init (setq evil-want-C-i-jump nil)
-  (evil-mode))
+  ;;:init (setq evil-want-C-i-jump nil)
+  ;;(evil-mode))
+  )
 (use-package evil-leader
   :straight t
   :init
@@ -217,3 +220,37 @@
 (add-hook 'elm-mode-hook 'display-line-numbers-mode)
 (add-hook 'rust-mode-hook 'display-line-numbers-mode)
 (add-hook 'org-mode-hook 'display-line-numbers-mode)
+;;______________________________________________________________________
+;;;;  Installing Org with straight.el
+;;; https://github.com/raxod502/straight.el/blob/develop/README.md#installing-org-with-straightel
+(require 'subr-x)
+(straight-use-package 'git)
+
+(defun org-git-version ()
+  "The Git version of 'org-mode'.
+Inserted by installing 'org-mode' or when a release is made."
+  (require 'git)
+  (let ((git-repo (expand-file-name
+                   "straight/repos/org/" user-emacs-directory)))
+    (string-trim
+     (git-run "describe"
+              "--match=release\*"
+              "--abbrev=6"
+              "HEAD"))))
+
+(defun org-release ()
+  "The release version of 'org-mode'.
+Inserted by installing 'org-mode' or when a release is made."
+  (require 'git)
+  (let ((git-repo (expand-file-name
+                   "straight/repos/org/" user-emacs-directory)))
+    (string-trim
+     (string-remove-prefix
+      "release_"
+      (git-run "describe"
+               "--match=release\*"
+               "--abbrev=0"
+               "HEAD")))))
+
+(provide 'org-version)
+(straight-use-package 'evil)
